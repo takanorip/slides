@@ -58,7 +58,7 @@ export default class Presentation extends React.Component {
             What's
           </Heading>
           <Heading size={1} lineHeight={1} textColor="secondary">
-            React / Flux / Redux
+            React / Flux
           </Heading>
           <Heading size={4} lineHeight={2} textColor="tertiary">
             Takanori Oki
@@ -69,7 +69,6 @@ export default class Presentation extends React.Component {
           <List margin="40px 0 0">
             <ListItem>React?</ListItem>
             <ListItem>Flux?</ListItem>
-            <ListItem>Redux?</ListItem>
             <ListItem>おまけ1 Reactと型</ListItem>
             <ListItem>おまけ1 Reactの周辺環境</ListItem>
           </List>

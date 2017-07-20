@@ -32,7 +32,9 @@ require("../assets/theme.css");
 
 const images = {
   img01: require("../assets/img01.png"),
-  img02: require("../assets/img02.png")
+  img02: require("../assets/img02.png"),
+  img03: require("../assets/img03.png"),
+  img04: require("../assets/img04.png")
 };
 
 preloader(images);
@@ -137,6 +139,13 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={3} textColor="tertiary">Lifecycle</Heading>
           <List margin="40px 0 0">
+            <ListItem>各コンポーネントは、いくつかの"lifecycle methods"を持つ。</ListItem>
+            <ListItem>プロセス中の特定のタイミングでコードを実行するためにオーバーライドできる。</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">Lifecycle</Heading>
+          <List margin="40px 0 0">
             <ListItem>componentWillMount()</ListItem>
             <ListItem>componentDidMount()</ListItem>
             <ListItem>componentWillReceiveProps()</ListItem>
@@ -167,6 +176,34 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading>Flux?</Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">Flux</Heading>
+          <List margin="40px 0 0">
+            <ListItem>アプリケーションのデータフローを管理するための設計パターン</ListItem>
+            <ListItem>データが一方向に流れる</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Image src={images.img03} display="block" width="100%" />
+          <BlockQuote>
+            <Cite>facebook/flux</Cite>
+          </BlockQuote>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Image src={images.img04} display="block" width="100%" />
+          <BlockQuote>
+            <Cite>facebook/flux</Cite>
+          </BlockQuote>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">Flux</Heading>
+          <List margin="40px 0 0">
+            <ListItem>Stores: アプリケーション全体のデータとビジネスロジック(必ずActionによってデータを更新する)</ListItem>
+            <ListItem>View: React等のコンポーネント</ListItem>
+            <ListItem>Actions: View等から発火されて作られるイベント</ListItem>
+            <ListItem>Dispatcher: 全てのアクションを受けてStoreにイベントを発火する</ListItem>
+          </List>
         </Slide>
       </Deck>
     );

@@ -54,7 +54,7 @@ const theme = createTheme({
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
+      <Deck transition={["zoom", "fade"]} transitionDuration={500} theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} lineHeight={1} textColor="secondary">
             What's
@@ -66,7 +66,7 @@ export default class Presentation extends React.Component {
             Takanori Oki
           </Heading>
         </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+        <Slide transition={["spin"]} bgColor="tertiary" textColor="primary">
           <Heading textColor="primary" size={3} caps>目次</Heading>
           <List margin="40px 0 0">
             <ListItem>React?</ListItem>
@@ -117,6 +117,7 @@ export default class Presentation extends React.Component {
           <Heading size={3} textColor="tertiary">Merits of Component</Heading>
           <List margin="40px 0 0">
             <ListItem>パーツごとに管理できるので運用が楽</ListItem>
+            <ListItem>パーツを再利用しやすい</ListItem>
             <ListItem>AtomicDesignなどと相性がいい</ListItem>
             <ListItem>HTML、CSS、JavaScriptを3つセットで扱うことができる</ListItem>
           </List>
@@ -197,12 +198,101 @@ export default class Presentation extends React.Component {
           </BlockQuote>
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <Heading size={3} textColor="tertiary">Flux</Heading>
+          <Heading size={3} textColor="tertiary">Dispatcher</Heading>
+          <Text textColor="primary" lineHeight={1.5} margin="40px 0 0">Actionを受け取り、Storeに送る部分。</Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">Store</Heading>
+          <Text textColor="primary" lineHeight={1.5} margin="40px 0 0">アプリケーションのデータを保持している部分。Dispatcherに紐付けられていて、Actionを受け取る。StoreのデータはActionを受け取ることによってのみ変更される。</Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">Action</Heading>
+          <Text textColor="primary" lineHeight={1.5} margin="40px 0 0">Viewで発生したイベントなど、アプリケーションのStateに影響を与えるもの。</Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">View</Heading>
+          <Text textColor="primary" lineHeight={1.5} margin="40px 0 0">Storeのデータを表示する。</Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading>おまけ1</Heading>
+          <Heading>Reactと型</Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={3} textColor="primary">React(JavaScript)でも型チェックしたい！</Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
+          <Heading size={3} textColor="primary">主な方法</Heading>
           <List margin="40px 0 0">
-            <ListItem>Stores: アプリケーション全体のデータとビジネスロジック(必ずActionによってデータを更新する)</ListItem>
-            <ListItem>View: React等のコンポーネント</ListItem>
-            <ListItem>Actions: View等から発火されて作られるイベント</ListItem>
-            <ListItem>Dispatcher: 全てのアクションを受けてStoreにイベントを発火する</ListItem>
+            <ListItem>React.PropTypes</ListItem>
+            <ListItem>prop-types</ListItem>
+            <ListItem>TypeScript</ListItem>
+            <ListItem>Flow</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">React.PropTypes</Heading>
+          <List margin="40px 0 0">
+            <ListItem>Reactの標準機能</ListItem>
+            <ListItem>propに型制限をつけることができる</ListItem>
+            <ListItem>Warningは出るけとコードは実行できる</ListItem>
+            <ListItem>現在非推奨（v16で削除予定）</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">prop-types</Heading>
+          <List margin="40px 0 0">
+            <ListItem>React.PropTypesの代わりになるライブラリ</ListItem>
+            <ListItem>機能は変わらない</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">TypeScript</Heading>
+          <List margin="40px 0 0">
+            <ListItem>Microsoft社製のAltJSの1つ</ListItem>
+            <ListItem>静的型付けやアクセス修飾子が使える</ListItem>
+            <ListItem>トランスパイルするとJSになる</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">Flow</Heading>
+          <List margin="40px 0 0">
+            <ListItem>静的型付けを導入するライブラリ</ListItem>
+            <ListItem>型チェックのみ行う</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading>おまけ2</Heading>
+          <Heading>Reactの周辺環境</Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">Reactの周辺環境</Heading>
+          <List margin="40px 0 0">
+            <ListItem>Webpack</ListItem>
+            <ListItem>babel</ListItem>
+            <ListItem>ESLint</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">Webpack</Heading>
+          <List margin="40px 0 0">
+            <ListItem>JSのモジュールバンドラ</ListItem>
+            <ListItem>複数のモジュールを1つにまとめたファイルを出力する</ListItem>
+            <ListItem>CSSとか画像もいい感じにまとめてくれる</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">babel</Heading>
+          <List margin="40px 0 0">
+            <ListItem>JSのトランスパイラ</ListItem>
+            <ListItem>ES2015以降のコードをES5に書き換えてくれる</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="tertiary">ESLint</Heading>
+          <List margin="40px 0 0">
+            <ListItem>JavaScriptの静的検証ツール</ListItem>
+            <ListItem>バグやtypoを見つけてくれる</ListItem>
+            <ListItem>ルールをカスタマイズできる</ListItem>
           </List>
         </Slide>
       </Deck>

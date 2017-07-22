@@ -241,7 +241,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={3} textColor="tertiary">prop-types</Heading>
           <List margin="40px 0 0">
-            <ListItem>React.PropTypesの代わりになるライブラリ</ListItem>
+            <ListItem>React.PropTypesの代替ライブラリ</ListItem>
             <ListItem>機能は変わらない</ListItem>
           </List>
         </Slide>
@@ -276,7 +276,7 @@ export default class Presentation extends React.Component {
           <Heading size={3} textColor="tertiary">Webpack</Heading>
           <List margin="40px 0 0">
             <ListItem>JSのモジュールバンドラ</ListItem>
-            <ListItem>複数のモジュールを1つにまとめたファイルを出力する</ListItem>
+            <ListItem>複数のモジュールを1つにまとる</ListItem>
             <ListItem>CSSとか画像もいい感じにまとめてくれる</ListItem>
           </List>
         </Slide>
@@ -294,6 +294,9 @@ export default class Presentation extends React.Component {
             <ListItem>バグやtypoを見つけてくれる</ListItem>
             <ListItem>ルールをカスタマイズできる</ListItem>
           </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Heading>終わり</Heading>
         </Slide>
       </Deck>
     );
